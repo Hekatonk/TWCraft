@@ -21,15 +21,21 @@ Everything under `mods/`, `config/`, `kubejs/`, `defaultconfigs/`,
 `index.toml` is generated — never hand-edit it.
 
 ```sh
-# add a mod -- Modrinth first, CurseForge as fallback. Both track updates, so
-# `update --all` works whichever one a mod came from.
-packwiz modrinth add <slug>
+# add a mod -- CurseForge first, Modrinth as the fallback. Both track updates,
+# so `update --all` works whichever one a mod came from.
 packwiz curseforge add <slug>
+packwiz modrinth add <slug>
 
-# NOT `packwiz github add`: it resolves only a repo's LATEST release and filters
-# assets within it, so a mod maintaining both 1.20.1 and 1.21.1 branches
-# resolves to whichever shipped last. It will happily install a 1.20.1 Forge jar
-# into this pack. Always check the installed filename's loader and MC version.
+# Some CurseForge projects set allowModDistribution=false. packwiz adds them
+# fine, but the CF API then serves no download URL, so packwiz-installer can't
+# fetch the jar and every player has to download it by hand -- which defeats the
+# point of this pack. Move those to Modrinth.
+#
+# NOT `packwiz github add`: it resolves only a repo's LATEST release, so a mod
+# maintaining both 1.20.1 and 1.21.1 branches resolves to whichever shipped
+# last. It will happily install a 1.20.1 Forge jar into this pack.
+#
+# Whatever the source, check the installed filename's loader and MC version.
 
 # remove one
 packwiz remove jei
