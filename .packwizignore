@@ -9,8 +9,10 @@
 # Server install and export output -- reproducible, never distributed.
 /server/
 /build/
-*.mrpack
-*.zip
+# Root-anchored: an export lands in the pack root, but a bundled resourcepack is
+# also a .zip and must stay indexed.
+/*.mrpack
+/*.zip
 
 # Repo metadata, not game files.
 /.git/

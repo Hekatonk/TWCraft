@@ -8,6 +8,11 @@
 /deploy/out/
 /deploy/packwiz-installer-bootstrap.jar
 *.zip
+# ...but a bundled resourcepack/shaderpack IS a .zip and is real pack content.
+# Without these, dropping one in would be silently untracked while packwiz happily
+# indexes it, and clients would 404 on a file that never reached the repo.
+!/resourcepacks/*.zip
+!/shaderpacks/*.zip
 
 # local test instance / runtime junk
 /run/
