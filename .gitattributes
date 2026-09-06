@@ -1,0 +1,5 @@
+# packwiz hashes files as they sit on disk, so any line-ending conversion between
+# clones would change those hashes and make `packwiz refresh` churn the index (or
+# worse, hand clients a hash that doesn't match what they downloaded). Disable
+# conversion entirely: bytes in the repo are the bytes on every machine.
+* -text

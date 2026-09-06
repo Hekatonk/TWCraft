@@ -1,2 +1,5 @@
 hash-format = "sha256"
-files = []
+
+[[files]]
+file = "kubejs/README.txt"
+hash = "1a449bcdb32e98fcc3df96b291bf66d58ad795a7e28f92b70ea4ac265e4f1c97"
