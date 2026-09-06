@@ -6,6 +6,11 @@ hash = "7d59d5bc5c67a70245cdf1d5d42acf4aa2ebb3be6352c848eeb566ed1bf93418"
 metafile = true
 
 [[files]]
+file = "mods/embeddium.pw.toml"
+hash = "0e4f41584cc1c4fc0b81bd10cba6b0f6dfb27a5d64e740c3e481f98d211ea0e1"
+metafile = true
+
+[[files]]
 file = "mods/ferritecore.pw.toml"
 hash = "f9527dc5db20e8e5961db0df948499981cd2c63262d6b01ea8d14c555672a86f"
 metafile = true
