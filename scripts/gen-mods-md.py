@@ -48,6 +48,10 @@ SRC = {
     # Darkhax's library. Every source link here was checked against the repo's
     # own description; do not trust a slug match alone.
     "bookshelf": "https://github.com/Darkhax-Minecraft/Bookshelf",
+    "irisshaders": "https://github.com/IrisShaders/Iris",
+    "bad-wither-no-cookie-reloaded": "https://github.com/droidicus/BadWitherNoCookie",
+    "inventory-sorter": None,  # no public repo found
+    "model-gap-fix": None,     # no public repo found
 }
 
 # Loader/build suffixes that are not part of a version number.
@@ -67,7 +71,12 @@ NOTES = {
     "modernfix": ("Performance", "Broad startup/memory optimisations; the single biggest load-time win.",
                   "`config/modernfix-mixins.properties` — dynamic resources and a few features are opt-in."),
     "ferritecore": ("Performance", "Cuts blockstate memory use substantially.", "`config/ferritecore-mixin.toml`. Defaults are fine; disable only to isolate a crash."),
-    "embeddium": ("Performance", "Sodium-derived renderer; large FPS gain.", "In-game Video Settings. Conflicts with Sodium — never both."),
+    "sodium": ("Performance", "The renderer replacement; large FPS gain. Official NeoForge build from CaffeineMC.",
+               "In-game Video Settings. Replaced Embeddium, whose 1.21.1 branch ended 2025-01-24 and which Iris declares `incompatible` with."),
+    "sodium-extra": ("Performance", "Adds back the extra toggles Sodium omits: FPS limiter, particle/fog/animation controls.",
+                     "In-game Video Settings -> Extra."),
+    "irisshaders": ("Performance", "Shader-pack support (OptiFine-format packs) on top of Sodium.",
+                    "Drop shaderpacks in `shaderpacks/`, select in Video Settings. **Beta build on purpose**: the stable 1.8.12 targets Sodium 0.6, this targets Sodium 0.8 to match our 0.8.13 — same pairing All the Mods 10 ships."),
     "immediatelyfast": ("Performance", "Batches immediate-mode rendering (HUD, text, GUIs).", "`config/immediatelyfast.json`. Disable `experimental` toggles if HUD mods misbehave."),
     "entityculling": ("Performance", "Skips rendering entities hidden behind blocks.", "`config/entityculling.json` — tracing interval and per-entity opt-outs."),
     "alltheleaks": ("Performance", "Patches memory leaks in MC, NeoForge and common mods.", "None. Drop-in."),
