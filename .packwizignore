@@ -43,3 +43,7 @@ screenshots/
 
 # Maintainer tooling. Ships the pack, is not part OF the pack.
 /scripts/
+
+# Default Options writes this per-install to track first-run state; shipping it
+# would make every client think defaults were already applied.
+defaultoptions.journal.json

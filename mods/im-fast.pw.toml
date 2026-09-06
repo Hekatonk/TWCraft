@@ -4,11 +4,11 @@ side = "both"
 pin = true
 
 [download]
-hash-format = "sha1"
-hash = "f8e92ef61de3751f619238eed5ae9952b5a049d0"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/PaUMOeP0/versions/FWI4gJ6y/imfast-NEOFORGE-1.21.1-1.0.3.jar"
+hash-format = "sha512"
+hash = "0f87cf740894165c50f342e706ff6526073801690d1ac1ae51dcf50084c0293371ad7440bfa9563c905114da3ee1b19c1fa22a35224fb965e83eb887408ecd12"
 
 [update]
-[update.curseforge]
-file-id = 8747159
-project-id = 1111501
+[update.modrinth]
+mod-id = "PaUMOeP0"
+version = "FWI4gJ6y"

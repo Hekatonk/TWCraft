@@ -36,3 +36,6 @@ screenshots/
 
 .vscode/
 .idea/
+
+# Default Options first-run tracker -- the mod's README says never to ship it.
+defaultoptions.journal.json

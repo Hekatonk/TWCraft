@@ -125,6 +125,8 @@ NOTES = {
     "client-tweaks": ("Client QoL", "Grab-bag of small client fixes and conveniences.", "`config/clienttweaks.toml` — every tweak toggles independently."),
     "corpse": ("Client QoL", "Death drops go into a lootable corpse instead of scattering.", "`config/corpse.json` — despawn time, whether others can rob it. **Beta build; no release exists for 1.21.1.**"),
     "configured": ("Client QoL", "In-game editor for other mods' configs.", "None; it is the UI for everything else."),
+    "default-options": ("Client QoL", "Ships pack default keybinds/options that apply on first run only, without overwriting a returning player's options.txt.",
+                        "Set binds in game, then `/defaultoptions saveOptions` writes them to `config/defaultoptions/`. `config/defaultoptions/extra/` is copied into the instance on first run. Never ship `defaultoptions.journal.json` — it is the per-install first-run tracker and is git/packwiz-ignored."),
     "catalogue": ("Client QoL", "Redesigned mod list with search and icons.", "None."),
 
     # --- Libraries -------------------------------------------------------

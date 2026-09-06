@@ -126,13 +126,18 @@ hash = "8e734747c578ee504bb1e32cefe3eccf317fa529df06d6e189899a3df3e900eb"
 metafile = true
 
 [[files]]
+file = "mods/default-options.pw.toml"
+hash = "45042daf74679b45b4b12d6092f9f61aea29b64103badd914ac48037a9bc4e2b"
+metafile = true
+
+[[files]]
 file = "mods/embeddium.pw.toml"
 hash = "0e4f41584cc1c4fc0b81bd10cba6b0f6dfb27a5d64e740c3e481f98d211ea0e1"
 metafile = true
 
 [[files]]
 file = "mods/entityculling.pw.toml"
-hash = "9e655f4be9e223f7d9404f93bd2f9913594871f2c928478e997b6aed12217c4e"
+hash = "9182e55238add08951c5bd6e34e709dfcd9ae11e2315955317eb73bd58793469"
 metafile = true
 
 [[files]]
@@ -197,7 +202,7 @@ metafile = true
 
 [[files]]
 file = "mods/im-fast.pw.toml"
-hash = "b86c1dd515132015447f3b3bfa87a4f1c3ab0188f7d13a107f6b985d4e0a71cf"
+hash = "cf31bdff5f697052e975722ef719e5d705b74b4a6f7555e5554bdc2e700d723c"
 metafile = true
 
 [[files]]
