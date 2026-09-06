@@ -21,12 +21,15 @@ Everything under `mods/`, `config/`, `kubejs/`, `defaultconfigs/`,
 `index.toml` is generated — never hand-edit it.
 
 ```sh
-# add a mod -- try these in order, falling through only when a tier has no
-# build for 1.21.1/NeoForge. All three track updates, so `update --all` works
-# whichever one a mod came from.
-packwiz github add <owner/repo>     # 1. the mod's own releases, preferred
-packwiz modrinth add <slug>         # 2.
-packwiz curseforge add <slug>       # 3.
+# add a mod -- Modrinth first, CurseForge as fallback. Both track updates, so
+# `update --all` works whichever one a mod came from.
+packwiz modrinth add <slug>
+packwiz curseforge add <slug>
+
+# NOT `packwiz github add`: it resolves only a repo's LATEST release and filters
+# assets within it, so a mod maintaining both 1.20.1 and 1.21.1 branches
+# resolves to whichever shipped last. It will happily install a 1.20.1 Forge jar
+# into this pack. Always check the installed filename's loader and MC version.
 
 # remove one
 packwiz remove jei
