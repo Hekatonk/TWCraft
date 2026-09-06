@@ -1,13 +1,28 @@
 hash-format = "sha256"
 
 [[files]]
+file = "mods/alternate-current.pw.toml"
+hash = "21bc58d8fe97821a36fb3b56b978d223d475a21a06c49ca8ea2410d8c79bf3d4"
+metafile = true
+
+[[files]]
 file = "mods/better-advanced-tooltips.pw.toml"
 hash = "7d59d5bc5c67a70245cdf1d5d42acf4aa2ebb3be6352c848eeb566ed1bf93418"
 metafile = true
 
 [[files]]
+file = "mods/clumps.pw.toml"
+hash = "7c540f69b402f4f32d0c5621f908c68cf36280076536bbaa0d6eb8ff5ba9d29b"
+metafile = true
+
+[[files]]
 file = "mods/embeddium.pw.toml"
 hash = "0e4f41584cc1c4fc0b81bd10cba6b0f6dfb27a5d64e740c3e481f98d211ea0e1"
+metafile = true
+
+[[files]]
+file = "mods/entityculling.pw.toml"
+hash = "9182e55238add08951c5bd6e34e709dfcd9ae11e2315955317eb73bd58793469"
 metafile = true
 
 [[files]]
@@ -38,4 +53,9 @@ metafile = true
 [[files]]
 file = "mods/rhino.pw.toml"
 hash = "e8e9df1d1d718d41417e6821b1adcd09a04f3ccee60ad3d7737d56b61d76f691"
+metafile = true
+
+[[files]]
+file = "mods/zfastnoise.pw.toml"
+hash = "42dbb78b42b447869b3a8b8086ab2123dd2d990f4a6109b31c53b190b92d7640"
 metafile = true
