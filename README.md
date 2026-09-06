@@ -40,7 +40,16 @@ packwiz modrinth add <slug>
 # remove one
 packwiz remove jei
 
-# bump everything to the newest compatible versions
+# Every mod is PINNED to a specific stable file, so this is a no-op by design --
+# it exists to stop packwiz silently moving a mod onto a beta. To update a mod,
+# find its newest stable file and re-add at that exact id:
+#
+#   python scripts/cf-stable.py <slug>
+#   packwiz remove <slug>
+#   packwiz curseforge add <slug> --file-id <id>
+#   packwiz pin <slug>
+#
+# (re-apply any `side` override afterwards -- re-adding resets it)
 packwiz update --all
 
 # after editing config/, kubejs/ or anything else by hand

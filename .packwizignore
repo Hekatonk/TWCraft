@@ -40,3 +40,6 @@ screenshots/
 /kubejs/typings/
 /kubejs/jsconfig.json
 /kubejs/README.txt
+
+# Maintainer tooling. Ships the pack, is not part OF the pack.
+/scripts/
