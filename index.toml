@@ -16,6 +16,11 @@ hash = "f9527dc5db20e8e5961db0df948499981cd2c63262d6b01ea8d14c555672a86f"
 metafile = true
 
 [[files]]
+file = "mods/immediatelyfast.pw.toml"
+hash = "362f0b0392b4bec8585a46c71bf811d3d649f95681eaa77166b35251ac6ab6ee"
+metafile = true
+
+[[files]]
 file = "mods/kubejs.pw.toml"
 hash = "6ace7b79f9729d39b9ded1d72b4db517fb967e8b00b5a2a7507a92c6e2339437"
 metafile = true
