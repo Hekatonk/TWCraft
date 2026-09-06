@@ -51,8 +51,8 @@ hash = "f9527dc5db20e8e5961db0df948499981cd2c63262d6b01ea8d14c555672a86f"
 metafile = true
 
 [[files]]
-file = "mods/ftb-backups-2.pw.toml"
-hash = "2c34dca6ab9c9ec95e0b49111be374e8ac82bfbabd125e93a0af62fe80cc1cc6"
+file = "mods/ftb-backups-3.pw.toml"
+hash = "7d0e81115ff00db8a3ef5a9680ec3b3f676895589e415862597d19a6791ae36f"
 metafile = true
 
 [[files]]
