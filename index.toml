@@ -11,6 +11,11 @@ hash = "21bc58d8fe97821a36fb3b56b978d223d475a21a06c49ca8ea2410d8c79bf3d4"
 metafile = true
 
 [[files]]
+file = "mods/architectury-api.pw.toml"
+hash = "07a10a123f56fd38ceed39cad19adeb3e04ad432add317c53e7b123100974599"
+metafile = true
+
+[[files]]
 file = "mods/better-advanced-tooltips.pw.toml"
 hash = "7d59d5bc5c67a70245cdf1d5d42acf4aa2ebb3be6352c848eeb566ed1bf93418"
 metafile = true
@@ -46,6 +51,31 @@ hash = "f9527dc5db20e8e5961db0df948499981cd2c63262d6b01ea8d14c555672a86f"
 metafile = true
 
 [[files]]
+file = "mods/ftb-backups-2.pw.toml"
+hash = "2c34dca6ab9c9ec95e0b49111be374e8ac82bfbabd125e93a0af62fe80cc1cc6"
+metafile = true
+
+[[files]]
+file = "mods/ftb-chunks-forge.pw.toml"
+hash = "717423d4455155b835b5530385d19d52f6344ede258ce3bac56e520f43ee4458"
+metafile = true
+
+[[files]]
+file = "mods/ftb-library-forge.pw.toml"
+hash = "61123e236b290ad26af3c1870e45624a3007cfe7100f73313c93b60604bbb9da"
+metafile = true
+
+[[files]]
+file = "mods/ftb-quests-forge.pw.toml"
+hash = "f6d9d55bf00eaa5a151d920fa1f5dcb1933fad6004e8399d3eda4a68993167f6"
+metafile = true
+
+[[files]]
+file = "mods/ftb-teams-forge.pw.toml"
+hash = "0330fb0c2995d14abb4757e0f13dcad2912dfcec0f35d8e33f3925aa3a57a9fd"
+metafile = true
+
+[[files]]
 file = "mods/immediatelyfast.pw.toml"
 hash = "362f0b0392b4bec8585a46c71bf811d3d649f95681eaa77166b35251ac6ab6ee"
 metafile = true
@@ -58,6 +88,11 @@ metafile = true
 [[files]]
 file = "mods/modernfix.pw.toml"
 hash = "452a65ddee4a1a0c640adf71ebaf18374b8f234ae98f42d0bdfbe38dfda2c665"
+metafile = true
+
+[[files]]
+file = "mods/polylib.pw.toml"
+hash = "cc02031eeed6926c286169e1ae27607aa182d8941021c8c3dc33774223554f2f"
 metafile = true
 
 [[files]]
