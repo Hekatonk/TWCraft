@@ -22,6 +22,8 @@ crash-reports/
 saves/
 screenshots/
 *.log
+# Cygwin/MSYS crash dumps -- a segfaulting grep leaves these in the cwd.
+*.stackdump
 
 # The server is never distributed -- it is run from a single machine and is fully
 # reproducible from the pack itself (packwiz-installer syncs it).

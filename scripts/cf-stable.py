@@ -30,6 +30,13 @@ MC = "1.21.1"
 LOADER = "NeoForge"
 UA = {"User-Agent": "TWCraft-packwiz/1.0"}
 
+# Some CurseForge titles carry emoji (Jade is literally "Jade \U0001f50d"), which
+# blow up on a cp1252 Windows console. Degrade those characters instead of dying.
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except (AttributeError, OSError):
+    pass
+
 
 def fetch(slug, attempts=6):
     # A bare number is a CurseForge project ID; cfwidget serves those directly.
