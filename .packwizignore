@@ -1,0 +1,39 @@
+# packwiz does NOT read .gitignore -- this file is what keeps the index clean.
+# Anything indexed here is downloaded by every client, so this list is what stops
+# repo scaffolding from shipping as pack content.
+
+# Prism instance-zip tooling. This ships the pack TO clients; it must never be
+# indexed as part OF the pack, or every client downloads the installer scaffolding.
+/deploy/
+
+# Server install and export output -- reproducible, never distributed.
+/server/
+/build/
+*.mrpack
+*.zip
+
+# Repo metadata, not game files.
+/.git/
+/.github/
+/.gitignore
+/.packwizignore
+/.claude/
+/README.md
+/MODS.md
+/LICENSE
+
+# Placeholders that keep empty folders in git. They are not pack content.
+.gitkeep
+
+# Runtime junk that can appear in a dev instance.
+logs/
+crash-reports/
+saves/
+screenshots/
+*.log
+
+# ProbeJS generated typings -- tens of MB of editor autocomplete data, regenerated
+# in-game per install. Must never be indexed or it ships to every client.
+/kubejs/probe/
+/kubejs/typings/
+/kubejs/jsconfig.json

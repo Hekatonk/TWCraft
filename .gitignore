@@ -1,0 +1,31 @@
+# packwiz export output
+/build/
+*.mrpack
+
+# Prism instance-zip build output. The zip is a release asset, not source, and the
+# cached bootstrap jar is re-downloaded on demand. The scripts under deploy/ ARE
+# tracked -- only their output is not.
+/deploy/out/
+/deploy/packwiz-installer-bootstrap.jar
+*.zip
+
+# local test instance / runtime junk
+/run/
+/instance/
+logs/
+crash-reports/
+saves/
+screenshots/
+*.log
+
+# The server is never distributed -- it is run from a single machine and is fully
+# reproducible from the pack itself (packwiz-installer syncs it).
+/server/
+
+# ProbeJS generated typings (regenerated in-game, huge, not source)
+/kubejs/probe/
+/kubejs/typings/
+/kubejs/jsconfig.json
+
+.vscode/
+.idea/
