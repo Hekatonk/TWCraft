@@ -51,7 +51,12 @@ def fetch(slug, attempts=6):
                 time.sleep(3 + 2 * i)
                 continue
             if e.code == 404:
-                return None  # not on CurseForge under this slug
+                # cfwidget's slug index has gaps -- a 404 here means cfwidget
+                # cannot serve it, NOT that the project is absent from
+                # CurseForge. Entity Culling (448233) 404s by slug and resolves
+                # fine by ID. Always confirm with the numeric project ID before
+                # concluding a mod is missing from CurseForge.
+                return None
             raise
     raise SystemExit(slug + ": cfwidget returned no data after retries")
 
@@ -73,8 +78,14 @@ def report(slug, any_type):
     data = fetch(slug)
     if data is None:
         print("\n=== " + slug + " ===")
-        print("  NOT FOUND on CurseForge under this slug"
-              " (try the numeric project ID, or use Modrinth)")
+        print("  cfwidget has no data for this slug. This does NOT mean the mod"
+              " is absent from CurseForge --")
+        print("  cfwidget's slug index has gaps. Get the project ID and retry"
+              " with it before giving up:")
+        print("    packwiz curseforge add https://www.curseforge.com/minecraft"
+              "/mc-mods/" + slug)
+        print("  (a bare slug makes packwiz *search*, which can match the wrong"
+              " project; a full URL does an exact lookup)")
         return
     title = data.get("title", slug)
     print("\n=== {} (project {}) ===".format(title, data.get("id")))
