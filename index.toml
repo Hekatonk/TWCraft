@@ -2,7 +2,7 @@ hash-format = "sha256"
 
 [[files]]
 file = "mods/better-advanced-tooltips.pw.toml"
-hash = "03084ff4f74cedc1b8ac6c85a98842f75956fb4fa811d285d8ca7caa8d54da5d"
+hash = "d9f912d43efb74c5ed07a3a9ef1cb078cec2bcdf369e05637d698e84f1fb67d6"
 metafile = true
 
 [[files]]
