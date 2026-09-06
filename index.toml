@@ -1,6 +1,11 @@
 hash-format = "sha256"
 
 [[files]]
+file = "mods/almostunified.pw.toml"
+hash = "f54f91903fd6cb21baad8d65a406bd24b10f84ecaa520cb3eb745d10bfa72671"
+metafile = true
+
+[[files]]
 file = "mods/alternate-current.pw.toml"
 hash = "21bc58d8fe97821a36fb3b56b978d223d475a21a06c49ca8ea2410d8c79bf3d4"
 metafile = true
@@ -11,8 +16,18 @@ hash = "7d59d5bc5c67a70245cdf1d5d42acf4aa2ebb3be6352c848eeb566ed1bf93418"
 metafile = true
 
 [[files]]
+file = "mods/catalogue.pw.toml"
+hash = "e4310f26f4fc2f439ea75a80e330cffec3b3f2562f5a36bbb68f9f158444a1ae"
+metafile = true
+
+[[files]]
 file = "mods/clumps.pw.toml"
 hash = "7c540f69b402f4f32d0c5621f908c68cf36280076536bbaa0d6eb8ff5ba9d29b"
+metafile = true
+
+[[files]]
+file = "mods/configured.pw.toml"
+hash = "be4dd990bde2c6a763abf43f0dedaad39490d9c692f9ba2ccdd1fd7854b10711"
 metafile = true
 
 [[files]]
@@ -43,6 +58,11 @@ metafile = true
 [[files]]
 file = "mods/modernfix.pw.toml"
 hash = "452a65ddee4a1a0c640adf71ebaf18374b8f234ae98f42d0bdfbe38dfda2c665"
+metafile = true
+
+[[files]]
+file = "mods/polymorph.pw.toml"
+hash = "330067c1064988285f75c5eabbaddeef694cdd417e20a0cac9fe3b80142e652c"
 metafile = true
 
 [[files]]
