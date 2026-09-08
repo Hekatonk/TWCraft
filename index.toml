@@ -381,7 +381,7 @@ metafile = true
 
 [[files]]
 file = "mods/more-overlays-updated.pw.toml"
-hash = "f7299192e6822400f1fb86f019485d873757912aa2cb75e0df2930d43cdcb6b1"
+hash = "2c832fc79d75314bf572424d9b8e6c756e2f9ccbdbd87fd8b58423a26cb68c3c"
 metafile = true
 
 [[files]]
@@ -411,7 +411,7 @@ metafile = true
 
 [[files]]
 file = "mods/not-enough-animations.pw.toml"
-hash = "3f667baf415f3708723311edd2d9ad7f57d487a8c7f6ee10e476b87095d4e9d8"
+hash = "addadc5e3b97d15e91f556c573eb54fba74ab2a5cf24983cd5e47dba641ff2a8"
 metafile = true
 
 [[files]]
