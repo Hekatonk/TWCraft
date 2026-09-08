@@ -206,8 +206,20 @@ if (-not (Test-Path $argsFile)) {
         Say "downloading NeoForge $neoVersion installer"
         Invoke-WebRequest -Uri "https://maven.neoforged.net/releases/net/neoforged/neoforge/$neoVersion/neoforge-$neoVersion-installer.jar" -OutFile $installer
     }
+    <#
+        Run from inside the server directory. The NeoForge installer writes a
+        ~500 KB neoforge-installer.jar.log into its *working* directory, and the
+        script is normally invoked from the pack root -- so without this it
+        litters the pack with a log file. It is covered by *.log in both ignore
+        files, but keeping it out of the pack root entirely is tidier.
+    #>
     Say "installing server (this pulls the loader libraries; takes a minute)"
-    & $java -jar $installer --installServer $serverDir | Out-Null
+    Push-Location $serverDir
+    try {
+        & $java -jar $installer --installServer $serverDir | Out-Null
+    } finally {
+        Pop-Location
+    }
     if ($LASTEXITCODE -ne 0) { throw "NeoForge installer failed with exit code $LASTEXITCODE" }
 }
 if (-not (Test-Path $argsFile)) { throw "Server install did not produce $argsFile" }
