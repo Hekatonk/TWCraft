@@ -34,27 +34,76 @@ def indexed_files():
     return set(re.findall(r'^file = "(.*)"', text, re.M))
 
 
-def tracked_files():
-    out = subprocess.run(["git", "ls-files"], cwd=ROOT,
-                         capture_output=True, text=True, check=True).stdout
-    return set(line.strip() for line in out.splitlines() if line.strip())
+def ignored_files(paths):
+    """Of `paths`, return those git is configured to ignore.
+
+    Deliberately not `git ls-files`: a mod added but not yet staged is untracked,
+    which is normal and harmless -- `git add -A` will pick it up. The real
+    failure is a file git will *never* commit because it is ignored, since that
+    is the one that leaves a live index entry pointing at nothing.
+    """
+    if not paths:
+        return set()
+    proc = subprocess.run(["git", "check-ignore", "--stdin"], cwd=ROOT,
+                          input="\n".join(sorted(paths)),
+                          capture_output=True, text=True)
+    # exit 0 = some ignored, 1 = none ignored, >1 = real error
+    if proc.returncode > 1:
+        raise SystemExit("git check-ignore failed: " + proc.stderr.strip())
+    return set(line.strip() for line in proc.stdout.splitlines() if line.strip())
+
+
+def jer_reminder():
+    """Warn while JER has no worldgen data shipped with the pack.
+
+    Just Enough Resources only knows vanilla ore distributions out of the box.
+    Modded ores (Mekanism's osmium, tin, uranium, lead, fluorite, salt) stay
+    blank until config/world-gen.json exists. Shipping that file
+    means every player gets the data rather than each generating it.
+
+    JER's own /jer_profile command registers but is not functional on this
+    version -- it points at an external tool instead. That tool is RegionScanner
+    (github.com/RundownRhino/RegionScanner), a Rust CLI that scans the region
+    files of an already-generated world. tools/ holds the binary and is both
+    git- and packwiz-ignored.
+
+    Generate once the content mod list has settled: the data is a snapshot of
+    whatever worldgen existed at scan time, so adding an ore mod invalidates it.
+    """
+    # JER reads FMLPaths.CONFIGDIR/world-gen.json -- the config/ root, not a
+    # jeresources/ subfolder. Wrong location loads silently with no graphs.
+    wanted = os.path.join(ROOT, "config", "world-gen.json")
+    if os.path.exists(wanted):
+        return
+    print("\nTODO: JER worldgen data not present.")
+    print("   Modded ores (Mekanism etc) show no distribution in JEI without it.")
+    print("   /jer_profile is registered but not implemented on 1.21.1.")
+    print("   Run the whole pipeline unattended, from the pack root:")
+    print("       .\\deploy\\build-jer-worldgen.ps1")
+    print("   It installs a throwaway server under server/, syncs the pack with")
+    print("   side=server, pregenerates each dimension with Chunky, scans the")
+    print("   region files with RegionScanner, and writes the JSON into config/.")
+    print("   Add dimensions as ore mods arrive:")
+    print("       -Dims minecraft:overworld,minecraft:the_nether,mypack:mining")
+    print("   Do this once the content mod list has settled; it is a snapshot.")
 
 
 def main():
     indexed = indexed_files()
-    tracked = tracked_files()
 
-    # Indexed but not committed -> clients will 404 on it.
-    ghosts = sorted(indexed - tracked)
+    # Indexed but gitignored -> the file never reaches the repo, so every client
+    # reads it from index.toml and gets a 404.
+    ghosts = sorted(ignored_files(indexed))
     if ghosts:
-        print("FAIL: indexed but NOT tracked by git -- clients will 404 on these:")
+        print("FAIL: indexed but GITIGNORED -- clients will 404 on these:")
         for g in ghosts:
             print("   " + g)
         print("\nFix: add the pattern to .packwizignore (packwiz does not read"
               " .gitignore), then re-run `packwiz refresh`.")
         return 1
 
-    print("OK: all {} indexed files are tracked by git".format(len(indexed)))
+    print("OK: none of the {} indexed files are gitignored".format(len(indexed)))
+    jer_reminder()
     return 0
 
 

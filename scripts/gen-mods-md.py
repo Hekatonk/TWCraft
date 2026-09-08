@@ -109,6 +109,8 @@ NOTES = {
 
     # --- World / server --------------------------------------------------
     "in-control": ("World & server", "Rule-based control over mob spawning.", "`config/incontrol/spawn.json` etc. Empty rules = no effect; this is the main dial for spawn tuning."),
+    "chunky-pregenerator-forge": ("World & server", "Pregenerates chunks in the background so exploration does not stutter.",
+        "`/chunky radius <blocks>` then `/chunky start`; `/chunky pause`/`/chunky continue`. Also the pregeneration step for JER worldgen data -- see scripts/check-index.py."),
     "observable": ("World & server", "Profiles which entities/chunks are costing tick time.", "`/observable` in game. No config."),
     "crash-utilities": ("World & server", "Admin commands for diagnosing a struggling server.", "`config/crashutilities.toml`."),
     "memory-settings": ("World & server", "Warns at startup if allocated RAM is unreasonable.", "`config/memorysettings.txt` — set min/max expectations for the pack."),
@@ -161,7 +163,7 @@ NOTES = {
     "smithing-template-viewer": ("Recipe viewer", "Previews how a smithing template looks on armour. JEI and EMI.",
                                  "None. **Beta build**: no release exists for 1.21.1, same file All the Mods 10 ships."),
     "just-enough-resources-jer": ("Recipe viewer", "Adds mob drops, ore distribution by dimension, plant and dungeon loot pages to JEI.",
-                                 "`config/jeresources/` — ore-distribution profiling. **Alpha build**: every 1.21.1 file is alpha, and this exact file is what All the Mods 10: To the Sky ships."),
+                                 "`config/world-gen.json` holds the ore distributions (config root, NOT a jeresources/ subfolder -- JER reads FMLPaths.CONFIGDIR). Regenerate with `deploy/build-jer-worldgen.ps1`. **Alpha build**: every 1.21.1 file is alpha, and this exact file is what All the Mods 10: To the Sky ships."),
     "ftb-jei-extras": ("Recipe viewer", "Bridges the FTB mods into JEI.", "None."),
     "ae2-jei-integration": ("Recipe viewer", "Restores AE2 recipe support in JEI.",
                             "None. Hard-requires `ae2` — it will block startup if AE2 is removed."),

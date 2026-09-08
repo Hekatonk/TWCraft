@@ -39,3 +39,11 @@ screenshots/
 
 # Default Options first-run tracker -- the mod's README says never to ship it.
 defaultoptions.journal.json
+
+# RegionScanner binary for generating JER worldgen data. A tool we run, not
+# pack content -- and a 3 MB exe has no business in git.
+/tools/
+
+# The bootstrap self-downloads packwiz-installer.jar into whatever directory
+# it runs from. That is tooling, not pack content.
+/packwiz-installer.jar

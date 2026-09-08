@@ -1,6 +1,10 @@
 hash-format = "sha256"
 
 [[files]]
+file = "config/world-gen.json"
+hash = "88301d8bea878dbe550b950747a83c7191c8c53461696be1c96b7cd869866760"
+
+[[files]]
 file = "mods/accelerated-decay.pw.toml"
 hash = "433160eeb5db3ab39c1a7d06a9c84f622d5d4c1a965f200990be28a95130bec2"
 metafile = true
@@ -108,6 +112,11 @@ metafile = true
 [[files]]
 file = "mods/catalogue.pw.toml"
 hash = "99750aaabea665f45b2be8a6320d10c1af9c1b6670be608e1a58ec5d1d3e7238"
+metafile = true
+
+[[files]]
+file = "mods/chunky-pregenerator-forge.pw.toml"
+hash = "a086acfebb1d70107eff459797746c6e4fa7afe293f56b02ce7563b2ce3150ae"
 metafile = true
 
 [[files]]

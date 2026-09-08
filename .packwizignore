@@ -52,3 +52,9 @@ defaultoptions.journal.json
 # they are gitignored, so indexing one makes every client 404 on a file that was
 # never pushed.
 *.stackdump
+
+# Maintainer tooling (RegionScanner). Ships nothing to clients.
+/tools/
+
+# Bootstrap self-download; tooling, never pack content.
+/packwiz-installer.jar
