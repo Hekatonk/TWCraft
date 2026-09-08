@@ -1,6 +1,6 @@
 name = "NeoAuth"
 filename = "NeoAuth-1.21.1-1.0.0.jar"
-side = "client"
+side = "both"
 pin = true
 
 [download]

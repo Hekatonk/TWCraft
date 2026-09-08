@@ -90,6 +90,11 @@ NOTES = {
     "get-it-together-drops": ("Performance", "Merges dropped item entities more aggressively.", "`config/getittogetherdrops.json` — merge radius and per-item exclusions."),
     "im-fast": ("Performance", "Suppresses \"moved too quickly/wrongly\" server rejections.", "`config/imfast.toml` — speed thresholds."),
 
+    "spark": ("Performance", "Profiler for client and server: what is eating tick time, memory or CPU.",
+              "`/spark profiler start` then `/spark profiler stop` for a shareable report; `/spark tps`, `/spark healthreport`."),
+    "not-enough-animations": ("Performance", "Adds first-person-style animations to the third-person model.",
+                              "`config/notenoughanimations.json` — every animation toggles independently."),
+
     # --- Stability / fixes ----------------------------------------------
     "connectivity": ("Stability", "Fixes login timeouts, packet-size errors and ghost blocks.", "`config/connectivity.json` — raise timeouts and payload limits for a heavy pack."),
     "attributefix": ("Stability", "Removes vanilla's hard caps on attribute values.", "`config/attributefix.json` — per-attribute min/max. Needed once mods push attributes past vanilla limits."),
@@ -98,6 +103,9 @@ NOTES = {
     "polymorph": ("Stability", "Recipe-conflict resolver — pick which output when recipes collide.", "None until two mods collide; then choose per-recipe in the GUI."),
     "almostunified": ("Stability", "Unifies duplicate ores/ingots across mods to one canonical item.",
                       "`config/almostunified/` — mod priority list. **Currently inert**: no content mods to unify."),
+
+    "yeetusexperimentus": ("Stability", "Skips the \"experimental settings\" warning screen on world creation and server start.",
+                           "None. Relevant as soon as KubeJS or datapacks touch worldgen."),
 
     # --- World / server --------------------------------------------------
     "in-control": ("World & server", "Rule-based control over mob spawning.", "`config/incontrol/spawn.json` etc. Empty rules = no effect; this is the main dial for spawn tuning."),
@@ -133,10 +141,60 @@ NOTES = {
     "accelerated-decay": ("Client QoL", "Speeds up leaf decay after chopping a tree.", "`config/accelerated-decay.toml` — decay rate."),
     "client-tweaks": ("Client QoL", "Grab-bag of small client fixes and conveniences.", "`config/clienttweaks.toml` — every tweak toggles independently."),
     "corpse": ("Client QoL", "Death drops go into a lootable corpse instead of scattering.", "`config/corpse.json` — despawn time, whether others can rob it. **Beta build; no release exists for 1.21.1.**"),
+    "enchantment-descriptions": ("Client QoL", "Spells out on the tooltip what each enchantment actually does.",
+                                "`config/enchdesc.json` — tooltip format and whether to require Shift."),
+    "more-overlays-updated": ("Client QoL", "Light-level and chunk-border overlays for spawn-proofing.",
+                              "Keybinds in Controls (light overlay, chunk bounds); `config/moreoverlays-client.toml` for the spawn threshold."),
+    "keybind-bundles": ("Client QoL", "Chord keybinds, for when you run out of single keys.",
+                        "Configured in game. Pairs with Default Options — bundle assignments are part of what `/defaultoptions saveOptions` captures."),
     "configured": ("Client QoL", "In-game editor for other mods' configs.", "None; it is the UI for everything else."),
     "default-options": ("Client QoL", "Ships pack default keybinds/options that apply on first run only, without overwriting a returning player's options.txt.",
                         "Set binds in game, then `/defaultoptions saveOptions` writes them to `config/defaultoptions/`. `config/defaultoptions/extra/` is copied into the instance on first run. Never ship `defaultoptions.journal.json` — it is the per-install first-run tracker and is git/packwiz-ignored."),
     "catalogue": ("Client QoL", "Redesigned mod list with search and icons.", "None."),
+
+    # --- Recipe viewer ---------------------------------------------------
+    "jei": ("Recipe viewer", "Item and recipe browser; the backbone the addons plug into.",
+            "`config/jei/` — blacklist items, cheat-mode permissions. `/jei` opens config in game."),
+    "just-enough-professions-jep": ("Recipe viewer", "Shows which workstation gives a villager each profession.", "None."),
+    "justenoughbreeding": ("Recipe viewer", "Shows what each mob breeds with. Works with JEI, REI and EMI.", "None."),
+    "just-enough-archaeology": ("Recipe viewer", "Suspicious sand/gravel loot tables. JEI and EMI.", "None."),
+    "smithing-template-viewer": ("Recipe viewer", "Previews how a smithing template looks on armour. JEI and EMI.",
+                                 "None. **Beta build**: no release exists for 1.21.1, same file All the Mods 10 ships."),
+    "just-enough-resources-jer": ("Recipe viewer", "Adds mob drops, ore distribution by dimension, plant and dungeon loot pages to JEI.",
+                                 "`config/jeresources/` — ore-distribution profiling. **Alpha build**: every 1.21.1 file is alpha, and this exact file is what All the Mods 10: To the Sky ships."),
+    "ftb-jei-extras": ("Recipe viewer", "Bridges the FTB mods into JEI.", "None."),
+    "ae2-jei-integration": ("Recipe viewer", "Restores AE2 recipe support in JEI.",
+                            "None. Hard-requires `ae2` — it will block startup if AE2 is removed."),
+    "just-enough-mekanism-multiblocks": ("Recipe viewer", "JEI pages costing out Mekanism multiblock builds.",
+                                         "None. Hard-requires `mekanism` — it will block startup if Mekanism is removed."),
+
+    # --- Content ---------------------------------------------------------
+    "applied-energistics-2": ("Content", "Digital storage, autocrafting and channel-based networks.",
+                              "`config/ae2/` — channel mode (`channels = infinite` removes channel management entirely) and energy rates."),
+    "mekanism": ("Content", "Tech: ore processing chains, factories, gas/chemical systems, power.",
+                 "`config/mekanism/` — ore-multiplier tiers and machine energy use. Generators/Tools/Additions are separate mods, not installed."),
+    "guideme": ("Libraries", "In-game guidebook framework AE2 uses for its manual.", "None. AE2 dependency."),
+
+    # --- AE2 addons ------------------------------------------------------
+    "applied-energistics-2-wireless-terminals": ("AE2 addons", "Wireless crafting, pattern-access and fluid terminals.",
+        "Craft a Wireless Terminal + Quantum Bridge/booster; range set by AEInfinityBooster's cards if installed."),
+    "applied-mekanistics": ("AE2 addons", "Official Mekanism bridge: store and autocraft Mekanism chemicals/gases in the ME network.",
+        "None. Needs both AE2 and Mekanism, which the pack has."),
+    "polymorphic-energistics": ("AE2 addons", "Polymorph support inside AE2 autocrafting, so ambiguous recipes resolve.",
+        "None. Pairs with Polymorph, already in the pack."),
+    "ae2-crafting-tree": ("AE2 addons", "Renders an autocrafting job as a tree — the tool for finding why a craft is stuck.",
+        "None."),
+    "ae2-network-analyser": ("AE2 addons", "Handheld tool visualising channel usage and network topology.", "None."),
+    "mega-cells": ("AE2 addons", "Much larger ME storage cells and matching housings.",
+        "`config/megacells-common.toml` — cell capacities if you want them toned down."),
+    "merequester": ("AE2 addons", "Keeps items and fluids stocked to a set level automatically.", "None."),
+    "ae2-import-export-card": ("AE2 addons", "Import and export upgrade cards for AE2 buses.", "None."),
+    "aeinfinitybooster": ("AE2 addons", "Infinity Range and Dimension cards for wireless terminals.",
+        "`config/aeinfinitybooster.toml` — power draw; the point is removing range limits, so expect balance impact."),
+    "ex-pattern-provider": ("AE2 addons", "ExtendedAE: assorted AE2 QoL blocks (pattern providers, crafting extensions).",
+        "`config/extendedae-common.toml`."),
+    "applied-flux": ("AE2 addons", "Store FE/energy inside the ME network.", "None."),
+    "glodium": ("Libraries", "Render/registry/network helper library used by AE2 Network Analyser.", "None. Dependency."),
 
     # --- Libraries -------------------------------------------------------
     "architectury-api": ("Libraries", "Cross-loader abstraction layer.", "None."),
@@ -231,7 +289,8 @@ def main():
         groups.setdefault(group, []).append((m, what, dials))
 
     order = ["Scripting", "Performance", "Stability", "World & server",
-             "FTB suite", "Client QoL", "Libraries"]
+             "FTB suite", "Client QoL", "Recipe viewer", "Content", "AE2 addons",
+             "Libraries"]
     lines = [
         "# TWCraft mods",
         "",

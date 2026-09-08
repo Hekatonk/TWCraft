@@ -1,6 +1,6 @@
 name = "Default Options"
 filename = "defaultoptions-neoforge-1.21.1-21.1.8.jar"
-side = "client"
+side = "both"
 pin = true
 
 [download]

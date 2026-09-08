@@ -1,6 +1,6 @@
 name = "Catalogue"
 filename = "catalogue-neoforge-1.21.1-1.11.2.jar"
-side = "client"
+side = "both"
 pin = true
 
 [download]

@@ -1,6 +1,6 @@
 name = "ProbeJS"
 filename = "ProbeJS-8.0.3.jar"
-side = "client"
+side = "both"
 pin = true
 
 [download]

@@ -1,6 +1,6 @@
 name = "Configured"
 filename = "configured-neoforge-1.21.1-2.6.3.jar"
-side = "client"
+side = "both"
 pin = true
 
 [download]
