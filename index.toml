@@ -1,10 +1,6 @@
 hash-format = "sha256"
 
 [[files]]
-file = "grep.exe.stackdump"
-hash = "b5c55088d468f25ccba31ff5d296bfd3a65ab2f338db7f83eda9ec80f1332d2f"
-
-[[files]]
 file = "mods/accelerated-decay.pw.toml"
 hash = "433160eeb5db3ab39c1a7d06a9c84f622d5d4c1a965f200990be28a95130bec2"
 metafile = true

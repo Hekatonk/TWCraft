@@ -56,6 +56,11 @@ packwiz update --all
 packwiz refresh
 ```
 
+```sh
+# guard: every indexed file must be committed, or clients 404 on it
+python scripts/check-index.py
+```
+
 `packwiz refresh` rewrites `index.toml` and the hash in `pack.toml`. **Run it
 before every commit** — clients validate against those hashes, so an unrefreshed
 index means they silently get stale files.

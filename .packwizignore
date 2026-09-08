@@ -47,3 +47,8 @@ screenshots/
 # Default Options writes this per-install to track first-run state; shipping it
 # would make every client think defaults were already applied.
 defaultoptions.journal.json
+
+# Cygwin/MSYS crash dumps. A segfaulting grep drops these in the pack root;
+# they are gitignored, so indexing one makes every client 404 on a file that was
+# never pushed.
+*.stackdump
