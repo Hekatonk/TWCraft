@@ -2,7 +2,7 @@ hash-format = "sha256"
 
 [[files]]
 file = "config/world-gen.json"
-hash = "88301d8bea878dbe550b950747a83c7191c8c53461696be1c96b7cd869866760"
+hash = "918d80231faa17f2c113b28e8cf1ce0d338511ca2ab0db829d1e769936982364"
 
 [[files]]
 file = "mods/accelerated-decay.pw.toml"
