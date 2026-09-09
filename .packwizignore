@@ -58,3 +58,6 @@ defaultoptions.journal.json
 
 # Bootstrap self-download; tooling, never pack content.
 /packwiz-installer.jar
+
+# Almost Unified runtime debug dump, regenerated per install.
+config/almostunified/debug.json

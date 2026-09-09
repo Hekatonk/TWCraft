@@ -1,0 +1,50 @@
+# Spice of Life: Carrot Edition -- pack defaults.
+#
+# This is SERVER config. The live copy lives per-world in <save>/serverconfig/,
+# NOT in config/ -- a copy placed there is ignored. defaultconfigs/ is the only
+# way to ship values with the pack, and it seeds each new world once. Changing
+# this file does not affect worlds that already exist; use /foodlist clear after
+# editing to re-test, or delete the world's serverconfig copy.
+#
+# What counts as a food (SOLCarrotConfig.shouldCount): the item must have
+# FoodProperties, its nutrition must be >= minimumFoodValue, and its full item id
+# must pass the lists below. No tags are involved.
+
+[milestones]
+	# Number of hearts you start out with.
+	baseHearts = 10
+	# Number of hearts you gain for reaching a new milestone.
+	heartsPerMilestone = 2
+	# A list of numbers of unique foods you need to eat to unlock each milestone,
+	# in ascending order.
+	#
+	# Default is [5, 10, 15, 20, 25], which assumes a vanilla-sized food list.
+	# HarvestCraft 2 Crops + Food Extended add several hundred foods, so 25 unique
+	# foods is reached almost incidentally and the whole mechanic is over before
+	# it starts.
+	#
+	# These values keep the same ceiling as the default -- 5 milestones x 2 hearts
+	# = 10 bonus, so 10 -> 20 hearts -- but stretch the curve to HarvestCraft
+	# scale, so maxing out is an actual cooking project. Raise heartsPerMilestone
+	# or add milestones if you want the ceiling higher.
+	milestones = [10, 30, 60, 110, 180]
+
+[filtering]
+	# Foods in this list won't affect health nor show in the food book.
+	# Patterns match the full item id, e.g. "minecraft:rotten_flesh" or
+	# "pamhc2foodextended:*".
+	blacklist = []
+	# When non-empty the blacklist is IGNORED and only these foods count.
+	# This is the lever if the milestone counts above still feel too easy:
+	# whitelist prepared meals only, so raw ingredients stop contributing.
+	whitelist = []
+	# Minimum hunger a food must provide to count, in half drumsticks.
+	# Left at the default. Raising this to 2 or 3 is the blunt way to drop
+	# HarvestCraft's many low-nutrition raw ingredients without listing them.
+	minimumFoodValue = 1
+
+[miscellaneous]
+	# Whether to reset the food list on death, losing all bonus hearts.
+	resetOnDeath = false
+	# If true, eating outside survival mode is not tracked.
+	limitProgressionToSurvival = false

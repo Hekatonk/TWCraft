@@ -47,3 +47,6 @@ defaultoptions.journal.json
 # The bootstrap self-downloads packwiz-installer.jar into whatever directory
 # it runs from. That is tooling, not pack content.
 /packwiz-installer.jar
+
+# Almost Unified writes this at runtime with the unification report.
+config/almostunified/debug.json

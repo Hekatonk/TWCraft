@@ -1,0 +1,29 @@
+# Akashic Tome -- pack defaults.
+#
+# It decides what can be absorbed by SUBSTRING-MATCHING the item's registry id
+# against "Whitelisted Names" below. That is why most guidebooks work without
+# configuration, and also why unrelated items match by accident.
+#
+# The additions to "Blacklisted Items" are the false positives in this pack:
+#   twilightforest:canopy_bookshelf / chiseled_canopy_bookshelf  -> contain "book"
+#   twilightforest:death_tome_spawn_egg                          -> contains "tome"
+#   mekanism:energy_tablet                                       -> contains "tablet"
+#   actuallyadditions:book_pattern                               -> a crafting pattern
+#   minecraft:bookshelf / chiseled_bookshelf                     -> contain "book"
+#   minecraft:enchanted_book                                     -> contains "book";
+#       absorbing one instead of using it on an anvil would be a nasty surprise
+# Everything else in the defaults is upstream's list, kept as shipped.
+#
+# Real books this pack has, for reference: actuallyadditions:booklet, ae2:guide,
+# guideme:guide, cookingforblockheads:recipe_book, ftbquests:book,
+# immersiveengineering:manual, mekanism:dictionary, productivemetalworks:book,
+# silentgear:{guide_book,blueprint_book,material_book}, solcarrot:food_book,
+# and Patchouli's book_* variants.
+
+"Allow all items to be added" = false
+"Whitelisted Items" = ["roots:runedtablet", "opencomputers:tool:4", "immersiveengineering:tool:3", "integrateddynamics:on_the_dynamics_of_integration", "theoneprobe:probenote", "evilcraft:origins_of_darkness", "draconicevolution:info_tablet", "charset:tablet", "antiqueatlas:antique_atlas", "theurgy:grimiore", "tconstruct:materials_and_you", "tconstruct:puny_smelting", "tconstruct:mighty_smelting", "tconstruct:tinkers_gadgetry", "tconstruct:fantastic_foundry", "tetra:holo", "occultism:dictionary_of_spirits"]
+"Whitelisted Names" = ["book", "tome", "lexicon", "nomicon", "manual", "knowledge", "pedia", "compendium", "guide", "codex", "dictionary", "journal", "tablet", "grimoire", "bestiary"]
+"Blacklisted Mods" = []
+"Blacklisted Items" = ["primalmagick:lore_tablet_dirty", "primalmagick:lore_tablet_fragment", "twilightforest:canopy_bookshelf", "twilightforest:chiseled_canopy_bookshelf", "twilightforest:death_tome_spawn_egg", "mekanism:energy_tablet", "actuallyadditions:book_pattern", "minecraft:bookshelf", "minecraft:chiseled_bookshelf", "minecraft:enchanted_book"]
+"Mod Aliases" = ["nautralpledge=botania", "thermalexpansion=thermalfoundation", "thermaldynamics=thermalfoundation", "thermalcultivation=thermalfoundation", "redstonearsenal=thermalfoundation", "rftoolsdim=rftools", "rftoolspower=rftools", "rftoolscontrol=rftools", "ae2stuff=appliedenergistics2", "animus=bloodmagic", "integrateddynamics=integratedtunnels", "mekanismgenerators=mekanism", "mekanismtools=mekanism", "deepresonance=rftools", "xnet=rftools", "buildcrafttransport=buildcraft", "buildcraftfactory=buildcraft", "buildcraftsilicon=buildcraft"]
+"Hide Book Render" = false
